@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Email Reply Generator",
+  "description": "Generate AI powered email responses in seconds",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "*://mail.google.com/*"
+  ],
+
+  "action": {
+    "default_title": "Email Reply Generator"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["Content.js"],
+      "css": ["Content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
